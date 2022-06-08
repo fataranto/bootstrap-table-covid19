@@ -5,28 +5,64 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Hello, Bootstrap Table!</title>
+  <title>Covid Statistics</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css">
+  <script>
+
+  </script>
 
 </head>
 
 <body>
   <h1>Estadísticas Covid</h1>
 
-  <table data-toggle="table">
+  <table id="table" data-toggle="table" data-show-export="true"
+    data-url="https://corona.lmao.ninja/v3/covid-19/countries/spain,portugal,france,italy">
+    <thead>
+      <tr>
+        <th data-field="country">Nombre país</th>
+        <th data-field="population">Población</th>
+        <th data-field="activePerOneMillion" data-sortable="true" data-cell-style="cellStyle">Casos activos por millón
+          de habitantes</th>
+        <th data-field="updated" data-formatter="dateFormatter">Últimza actualización de los datos</th>
+      </tr>
+    </thead>
   </table>
+
+  <div class="container mt-2">
+    <form onsubmit="addCountry(event)">
+    <label for="next-country">Agregar un país</label>
+    <input id="next-country" type="text">
+    <input type="submit" value="Enviar">
+    </form>
+  </div>
+
+
+  <script>
+ 
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+  </script>
+  <!-- <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script> -->
+
+
+
+  <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table-locale-all.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
+  <script src="./app.js"></script>
+
 
 </body>
 
